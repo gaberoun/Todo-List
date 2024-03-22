@@ -1,0 +1,158 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  padding: 1rem;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  text-align: center;
+  background-color: #FAF0E6;
+}
+
+#container {
+  display: grid;
+  gap: 1.2rem;
+  margin: 1rem auto;
+  max-width: 600px;
+}
+
+.task {
+  display: grid;
+  grid-template-columns: 2fr 1fr 0.5fr auto;
+  padding: 0.5rem 0.8rem;
+  background-color: white;
+  border-radius: 4px;
+  align-items: center;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  gap: 0.5rem;
+}
+
+.todo {
+  text-transform: capitalize;
+  font-weight: bold;
+}
+
+.status {
+  padding: 0.2rem;
+  border-radius: 4px;
+  font-weight: bold;
+  color: white;
+  font-size: 0.8rem;
+}
+
+.done {
+  background-color: green;
+}
+
+.not-done {
+  background-color: darkred;
+}
+
+button {
+  border: none;
+}
+
+.delete {
+  background: url('https://cdn2.iconfinder.com/data/icons/apple-classic/100/Apple_classic_10Icon_5px_grid-02-512.png');
+  width: 1.5rem;
+  height: 1.5rem;
+  background-size: cover;
+  z-index: 1;
+}
+
+#add {
+  position: fixed;
+  width: 2rem;
+  height: 2rem;
+  z-index: 1;
+  right: 4.5rem;
+  bottom: 4.5rem;
+  background: url('https://cdn-icons-png.flaticon.com/512/32/32339.png');
+  background-size: cover;
+}
+
+button:hover {
+  scale: 1.2;
+  cursor: pointer;
+}
+
+#form-container {
+  display: none;
+  position: fixed;
+  bottom: 6.5rem;
+  right: 6.5rem;
+  max-width: 300px;
+  padding: 1.2rem;
+  z-index: 2;
+  background-color: lightcoral;
+  border-radius: 4px;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+}
+
+form > div{
+  display: flex;
+  grid-auto-flow: row;
+  justify-content: space-between;
+  gap: 0.5rem;
+  margin-block: 0.4rem;
+}
+
+#submit-button {
+  border: none;
+  padding: 0.4rem 0.7rem;
+  border-radius: 4px;
+  margin-top: 0.4rem;
+}
+
+#task-input, #owner-input {
+  padding: 0.4rem;
+  font-size: 14px;
+  border-radius: 50px;
+  border: none;
+  box-shadow: inset 6px 6px 6px #cbced1, inset -6px -6px 6px white;
+}
+
+/* Radio input template */
+input[type="radio"] {
+	appearance: none;
+	-webkit-appearance: none;
+	width: 12px;
+	height: 12px;
+	border: 1px solid #fff;
+	border-radius: 50%;
+	margin-right: 10px;
+	background-color: transparent;
+	position: relative;
+	top: 6px;
+}
+
+input[type="radio"]:checked::before {
+	content: "";
+	display: block;
+	width: 5px;
+	height: 5px;
+	background-color: black;
+	border-radius: 50%;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	animation: appear 0.8s;
+}
+
+@media (max-width: 870px){
+  #add {
+    position: absolute;
+    top: 1.5rem;
+    left: 80%;
+    width: 1.6rem;
+    height: 1.6rem;
+  }
+
+  #form-container {
+    bottom: 75%;
+    right: 20%;
+  }
+}

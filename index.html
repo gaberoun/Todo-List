@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Todo List</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <h1>Todo List</h1>
+  <button id='add'></button>
+
+  <div id='container'></div>
+
+  <div id='form-container'>
+    <form>
+      <div>
+        <label for='task-input'>Task</label>
+        <input type='text' id='task-input' name='task-input' required>
+      </div>
+      
+      <div>
+        <label for='owner-input'>Name</label>
+        <input type='text' id='owner-input' name='owner-input' required>
+      </div>
+      
+      <div>
+        <input type='radio' name='status-input' id='done-status' value=true required>
+        <label for='done-status'>Done</label>
+        <input type='radio' name='status-input' id='not-done-status' value=false required>
+        <label for='not-done-status'>Not Done</label>
+      </div>
+        
+      <input type='submit' id='submit-button'>
+    </form>
+  </div>
+    
+  <script src="api.js"></script>
+</body>
+</html>
